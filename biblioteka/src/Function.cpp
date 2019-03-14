@@ -5,6 +5,6 @@
 #include "Function.h"
 
 double Function::function(double x) {
-    return -1*x + 25;
+    return -1*x + 10;
 }
 

@@ -7,7 +7,6 @@
 
 #include <memory>
 #include <vector>
-#include <string>
 
 class Point;
 
@@ -17,7 +16,6 @@ class Function {
 
 public:
     double function(double x);
-    void writeToFile(std::vector<point_ptr> input, std::string filename);
 };
 
 typedef std::shared_ptr<Function> function_ptr;

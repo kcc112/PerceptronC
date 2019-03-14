@@ -8,10 +8,10 @@
 #include <iostream>
 
 Perceptron::Perceptron(){
-    lRate = 0.01;
+    lRate = 0.1;
     srand(time(NULL));
     for(int i = 0; i < 3; i++){
-        weight.push_back(((double(rand()) / double(RAND_MAX))));
+        weight.push_back(((double(rand())/double(RAND_MAX))*(4))-2);
     }
 }
 

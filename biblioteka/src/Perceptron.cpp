@@ -11,7 +11,7 @@ Perceptron::Perceptron(){
     lRate = 0.01;
     srand(time(NULL));
     for(int i = 0; i < 3; i++){
-        weight[i] = ((double(rand()) / double(RAND_MAX)) * (2)) - 1;
+        weight.push_back(((double(rand()) / double(RAND_MAX))));
     }
 }
 
@@ -27,7 +27,7 @@ int Perceptron::train(std::vector<double> inputs, int desired) {
     int answer = guess(inputs);
     double error = desired - answer;
     for(int i = 0; i < 3; i++){
-        weight[i] += lRate * error * inputs[i];
+        weight[i] = weight[i] + lRate * error * inputs[i];
     }
     return answer;
 }
@@ -38,4 +38,8 @@ int Perceptron::guess(std::vector<double> inputs){
         sum += inputs[i]*weight[i];
     }
     return sign(sum);
+}
+
+std::vector<double> Perceptron::getWeight() {
+    return weight;
 }

@@ -10,7 +10,7 @@
 
 class Perceptron {
 
-    double weight[3];
+    std::vector<double> weight;
     double lRate;
 
 public:
@@ -21,6 +21,7 @@ public:
     int guess(std::vector<double> inputs);
     int sign(double input);
     int train(std::vector<double> inputs, int desired);
+    std::vector<double> getWeight();
 };
 
 typedef std::shared_ptr<Perceptron> perceptron_ptr;
